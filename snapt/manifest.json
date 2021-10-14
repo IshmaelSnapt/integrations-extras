@@ -28,7 +28,10 @@
     "configuration": {
       "spec": "assets/configuration/spec.yaml"
     },
-    "dashboards": {},
+    "dashboards": {
+      "Snapt Balancer": "assets/dashboards/balancer.json",
+      "Accelerator - Metrics": "assets/dashboards/accelerator.json"
+    },
     "monitors": {},
     "saved_views": {},
     "service_checks": "assets/service_checks.json",
