@@ -1,12 +1,12 @@
 {
   "display_name": "Snapt",
   "maintainer": "ishmael.sibisi@snapt-ui.com",
-  "manifest_version": "1.0.0",
+  "manifest_version": "1.0.1",
   "name": "snapt",
   "metric_prefix": "snapt.",
   "metric_to_check": "",
   "creates_events": false,
-  "short_description": "",
+  "short_description": "Snapt-UI integration",
   "guid": "eb0b0c2f-4758-4186-9014-9296e2e6ca1a",
   "support": "core",
   "supported_os": [

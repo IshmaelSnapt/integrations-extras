@@ -353,8 +353,9 @@ class AcceleratorCheck(AgentCheck):
 
     # override
     def _normalize_tags_type(self, tags, device_name=None, metric_name=None):
-        if self.disable_generic_tags:
-            return super(AcceleratorCheck, self)._normalize_tags_type(tags, device_name, metric_name)
+        # TODO: Figure out WTH is happening with this config.
+        # if self.disable_generic_tags:
+        #     return super(AcceleratorCheck, self)._normalize_tags_type(tags, device_name, metric_name)
         # If disable_generic_tags is not enabled, for each generic tag we emmit both the generic and the non generic
         # version to ease transition.
         normalized_tags = []
