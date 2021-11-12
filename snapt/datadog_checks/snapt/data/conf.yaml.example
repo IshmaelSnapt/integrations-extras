@@ -924,7 +924,7 @@ instances:
     ## Generic tags such as `cluster` will be replaced by <integration_name>_cluster to avoid
     ## getting mixed with other integraton tags.
     #
-    disable_generic_tags: true
+    # disable_generic_tags: true
 
 ## Log Section
 ##

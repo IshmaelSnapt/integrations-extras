@@ -80,8 +80,8 @@ def instance_count_status_by_service(field, value):
     return True
 
 
-def instance_disable_generic_tags(field, value):
-    return False
+# def instance_disable_generic_tags(field, value):
+#     return False
 
 
 def instance_disable_legacy_service_tag(field, value):
