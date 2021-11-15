@@ -598,7 +598,7 @@ class BalancerCheck(AgentCheck):
                     self._submit_metric_tuple(METRICS[key][0], METRICS[key][1], back_or_front, value, tags)
 
     def _submit_metric_tuple(self, metric_type, suffix, back_or_front, value, tags):
-        name = "haproxy.%s.%s" % (back_or_front.lower(), suffix)
+        name = "snapt.balancer.%s.%s" % (back_or_front.lower(), suffix)
         try:
             if metric_type == 'rate':
                 self.rate(name, float(value), tags=tags)

@@ -8,14 +8,14 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "sum:haproxy.frontend.session.current{$scope}",
+                        "q": "sum:snapt.balancer.frontend.session.current{$scope}",
                         "display_type": "line",
                         "style": {
                             "palette": "purple"
                         }
                     },
                     {
-                        "q": "sum:haproxy.frontend.session.limit{$scope}",
+                        "q": "sum:snapt.balancer.frontend.session.limit{$scope}",
                         "display_type": "line",
                         "style": {
                             "palette": "warm"
@@ -45,7 +45,7 @@
                 "type": "query_value",
                 "requests": [
                     {
-                        "q": "avg:haproxy.backend.response.time{$scope}",
+                        "q": "avg:snapt.balancer.backend.response.time{$scope}",
                         "aggregator": "avg",
                         "conditional_formats": [
                             {
@@ -90,7 +90,7 @@
                 "type": "query_value",
                 "requests": [
                     {
-                        "q": "max:haproxy.backend.queue.current{$scope}",
+                        "q": "max:snapt.balancer.backend.queue.current{$scope}",
                         "aggregator": "max",
                         "conditional_formats": [
                             {
@@ -134,7 +134,7 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "sum:haproxy.count_per_status{*} by {status}",
+                        "q": "sum:snapt.balancer.count_per_status{*} by {status}",
                         "display_type": "area",
                         "style": {
                             "palette": "dog_classic"
@@ -164,14 +164,14 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "sum:haproxy.frontend.bytes.in_rate{$scope}",
+                        "q": "sum:snapt.balancer.frontend.bytes.in_rate{$scope}",
                         "display_type": "line",
                         "style": {
                             "palette": "purple"
                         }
                     },
                     {
-                        "q": "sum:haproxy.frontend.bytes.out_rate{$scope}",
+                        "q": "sum:snapt.balancer.frontend.bytes.out_rate{$scope}",
                         "display_type": "line",
                         "style": {
                             "palette": "cool"
@@ -201,14 +201,14 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "sum:haproxy.backend.bytes.in_rate{$scope}",
+                        "q": "sum:snapt.balancer.backend.bytes.in_rate{$scope}",
                         "display_type": "line",
                         "style": {
                             "palette": "cool"
                         }
                     },
                     {
-                        "q": "sum:haproxy.backend.bytes.out_rate{$scope}",
+                        "q": "sum:snapt.balancer.backend.bytes.out_rate{$scope}",
                         "display_type": "line",
                         "style": {
                             "palette": "purple"
@@ -238,7 +238,7 @@
                 "type": "query_value",
                 "requests": [
                     {
-                        "q": "sum:haproxy.frontend.session.pct{$scope}",
+                        "q": "sum:snapt.balancer.frontend.session.pct{$scope}",
                         "aggregator": "last",
                         "conditional_formats": [
                             {
@@ -283,7 +283,7 @@
                 "type": "query_value",
                 "requests": [
                     {
-                        "q": "sum:haproxy.backend.session.pct{$scope}",
+                        "q": "sum:snapt.balancer.backend.session.pct{$scope}",
                         "aggregator": "last",
                         "conditional_formats": [
                             {
@@ -328,7 +328,7 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "outliers(avg:haproxy.backend.response.time{$scope} by {host}, 'dbscan', 1.5)",
+                        "q": "outliers(avg:snapt.balancer.backend.response.time{$scope} by {host}, 'dbscan', 1.5)",
                         "display_type": "line",
                         "style": {
                             "palette": "orange"
@@ -370,7 +370,7 @@
                 "type": "query_value",
                 "requests": [
                     {
-                        "q": "(avg:haproxy.frontend.response.2xx{$scope}/ (avg:haproxy.frontend.response.4xx{$scope} + avg:haproxy.frontend.response.3xx{$scope} + avg:haproxy.frontend.response.2xx{$scope})) * 100",
+                        "q": "(avg:snapt.balancer.frontend.response.2xx{$scope}/ (avg:snapt.balancer.frontend.response.4xx{$scope} + avg:snapt.balancer.frontend.response.3xx{$scope} + avg:snapt.balancer.frontend.response.2xx{$scope})) * 100",
                         "aggregator": "last",
                         "conditional_formats": [
                             {
@@ -410,7 +410,7 @@
                 "type": "query_value",
                 "requests": [
                     {
-                        "q": "(avg:haproxy.backend.response.2xx{$scope}/ (avg:haproxy.backend.response.4xx{$scope} + avg:haproxy.backend.response.3xx{$scope} + avg:haproxy.backend.response.2xx{$scope})) * 100",
+                        "q": "(avg:snapt.balancer.backend.response.2xx{$scope}/ (avg:snapt.balancer.backend.response.4xx{$scope} + avg:snapt.balancer.backend.response.3xx{$scope} + avg:snapt.balancer.backend.response.2xx{$scope})) * 100",
                         "aggregator": "last",
                         "conditional_formats": [
                             {
@@ -450,7 +450,7 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "sum:haproxy.frontend.requests.rate{$scope}",
+                        "q": "sum:snapt.balancer.frontend.requests.rate{$scope}",
                         "display_type": "line",
                         "style": {
                             "palette": "purple"
@@ -480,11 +480,11 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "sum:haproxy.backend.session.current{$scope}",
+                        "q": "sum:snapt.balancer.backend.session.current{$scope}",
                         "display_type": "line"
                     },
                     {
-                        "q": "sum:haproxy.backend.session.limit{$scope}",
+                        "q": "sum:snapt.balancer.backend.session.limit{$scope}",
                         "display_type": "line",
                         "style": {
                             "palette": "warm"
@@ -514,7 +514,7 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "sum:haproxy.frontend.session.rate{$scope}",
+                        "q": "sum:snapt.balancer.frontend.session.rate{$scope}",
                         "display_type": "line",
                         "style": {
                             "palette": "purple"
@@ -544,7 +544,7 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "avg:haproxy.backend.session.rate{$scope}",
+                        "q": "avg:snapt.balancer.backend.session.rate{$scope}",
                         "display_type": "line"
                     }
                 ],
@@ -571,11 +571,11 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "sum:haproxy.backend.response.3xx{$scope}",
+                        "q": "sum:snapt.balancer.backend.response.3xx{$scope}",
                         "display_type": "line"
                     },
                     {
-                        "q": "sum:haproxy.frontend.response.3xx{$scope}",
+                        "q": "sum:snapt.balancer.frontend.response.3xx{$scope}",
                         "display_type": "line"
                     }
                 ],
@@ -602,11 +602,11 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "sum:haproxy.backend.response.4xx{$scope}",
+                        "q": "sum:snapt.balancer.backend.response.4xx{$scope}",
                         "display_type": "line"
                     },
                     {
-                        "q": "sum:haproxy.frontend.response.4xx{$scope}",
+                        "q": "sum:snapt.balancer.frontend.response.4xx{$scope}",
                         "display_type": "line"
                     }
                 ],
@@ -633,11 +633,11 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "sum:haproxy.backend.errors.resp_rate{$scope}",
+                        "q": "sum:snapt.balancer.backend.errors.resp_rate{$scope}",
                         "display_type": "line"
                     },
                     {
-                        "q": "sum:haproxy.frontend.errors.req_rate{$scope}",
+                        "q": "sum:snapt.balancer.frontend.errors.req_rate{$scope}",
                         "display_type": "line"
                     }
                 ],
@@ -664,11 +664,11 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "sum:haproxy.backend.warnings.retr_rate{$scope}",
+                        "q": "sum:snapt.balancer.backend.warnings.retr_rate{$scope}",
                         "display_type": "line"
                     },
                     {
-                        "q": "sum:haproxy.backend.warnings.redis_rate{$scope}",
+                        "q": "sum:snapt.balancer.backend.warnings.redis_rate{$scope}",
                         "display_type": "line"
                     }
                 ],
@@ -695,7 +695,7 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "avg:haproxy.backend.connect.time{$scope}",
+                        "q": "avg:snapt.balancer.backend.connect.time{$scope}",
                         "display_type": "line"
                     }
                 ],
@@ -729,7 +729,7 @@
                 "type": "query_value",
                 "requests": [
                     {
-                        "q": "sum:haproxy.backend.errors.con_rate{$scope}",
+                        "q": "sum:snapt.balancer.backend.errors.con_rate{$scope}",
                         "aggregator": "avg",
                         "conditional_formats": [
                             {
@@ -768,7 +768,7 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "avg:haproxy.backend.queue.time{$scope}",
+                        "q": "avg:snapt.balancer.backend.queue.time{$scope}",
                         "display_type": "line"
                     }
                 ],
@@ -795,11 +795,11 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "sum:haproxy.backend.response.5xx{$scope}",
+                        "q": "sum:snapt.balancer.backend.response.5xx{$scope}",
                         "display_type": "line"
                     },
                     {
-                        "q": "sum:haproxy.frontend.response.5xx{$scope}",
+                        "q": "sum:snapt.balancer.frontend.response.5xx{$scope}",
                         "display_type": "line"
                     }
                 ],
@@ -897,11 +897,11 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "sum:haproxy.backend.denied.req_rate{$scope}",
+                        "q": "sum:snapt.balancer.backend.denied.req_rate{$scope}",
                         "display_type": "line"
                     },
                     {
-                        "q": "sum:haproxy.backend.denied.resp_rate{$scope}",
+                        "q": "sum:snapt.balancer.backend.denied.resp_rate{$scope}",
                         "display_type": "line"
                     }
                 ],
@@ -928,11 +928,11 @@
                 "type": "timeseries",
                 "requests": [
                     {
-                        "q": "sum:haproxy.frontend.denied.req_rate{$scope}",
+                        "q": "sum:snapt.balancer.frontend.denied.req_rate{$scope}",
                         "display_type": "line"
                     },
                     {
-                        "q": "sum:haproxy.frontend.denied.resp_rate{$scope}",
+                        "q": "sum:snapt.balancer.frontend.denied.resp_rate{$scope}",
                         "display_type": "line"
                     }
                 ],
