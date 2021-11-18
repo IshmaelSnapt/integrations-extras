@@ -368,3 +368,24 @@ class AcceleratorCheck(AgentCheck):
                     continue
                 normalized_tags.extend(list({tag, self.degeneralise_tag(tag)}))
         return normalized_tags
+
+    def degeneralise_tag(self, tag):
+        tag_name, value = tag.split(':', 1)
+        GENERIC_TAGS = {
+            'cluster_name',
+            'clustername',
+            'cluster',
+            'clusterid',
+            'cluster_id',
+            'env',
+            'host_name',
+            'hostname',
+            'host',
+            'service',
+            'version',
+        }
+        if tag_name in GENERIC_TAGS:
+            new_name = '{}_{}'.format(self.name, tag_name)
+            return '{}:{}'.format(new_name, value)
+        else:
+            return tag
